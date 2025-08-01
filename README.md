@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Quick-Post Content Aggregator - Structured Architecture
 
 A full-stack web application with separate frontend and backend services. The frontend is built with Next.js and the backend is a standalone Express.js API server.
@@ -234,3 +235,6 @@ npm run dev:backend   # Backend on :3001
 
 This structured approach provides clear separation of concerns, making the codebase more maintainable and suitable for team collaboration while demonstrating full-stack development best practices.
 \`\`\`
+=======
+# quick-post_02240350
+>>>>>>> 5b05f5d5adcf72f7523f68efb1ecaa7b90da82a4
