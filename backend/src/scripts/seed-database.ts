@@ -9,7 +9,7 @@ async function seedDatabase() {
     // Create sample users
     const users = await Promise.all([
       prisma.user.upsert({
-        where: { email: "john.doe@example.com" },
+        where: { email: "jigme.dorji@example.com" },
         update: {},
         create: {
           name: "Jigme Dorji",

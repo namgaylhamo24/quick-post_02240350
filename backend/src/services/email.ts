@@ -11,7 +11,7 @@ export async function sendMagicLink(email: string, token: string) {
 
   // In production, you would send actual email here
   // Example with nodemailer:
-import nodemailer from "nodemailer"
+/*import nodemailer from "nodemailer"
   const transporter = nodemailer.createTransporter({
     host: process.env.EMAIL_SERVER_HOST,
     port: parseInt(process.env.EMAIL_SERVER_PORT!),
@@ -32,5 +32,5 @@ import nodemailer from "nodemailer"
       <p>This link will expire in 15 minutes.</p>
     `,
   })
- 
+*/
 }
