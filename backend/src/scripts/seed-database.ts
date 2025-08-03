@@ -1,4 +1,4 @@
-import { PrismaClient } from "@prisma/client"
+import { PrismaClient } from '@prisma/client'
 
 const prisma = new PrismaClient()
 
@@ -12,8 +12,8 @@ async function seedDatabase() {
         where: { email: "john.doe@example.com" },
         update: {},
         create: {
-          name: "John Doe",
-          email: "john.doe@example.com",
+          name: "Jigme Dorji",
+          email: "jigme.dorji@example.com",
           emailVerified: new Date(),
           image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=150",
         },
@@ -22,18 +22,18 @@ async function seedDatabase() {
         where: { email: "jane.smith@example.com" },
         update: {},
         create: {
-          name: "Jane Smith",
-          email: "jane.smith@example.com",
+          name: "Jamyang Tenzin",
+          email: "jamyang.tenzin@example.com",
           emailVerified: new Date(),
           image: "https://images.unsplash.com/photo-1494790108755-2616b612b786?w=150",
         },
       }),
       prisma.user.upsert({
-        where: { email: "mike.johnson@example.com" },
+        where: { email: "migmer.dorji@example.com" },
         update: {},
         create: {
-          name: "Mike Johnson",
-          email: "mike.johnson@example.com",
+          name: "Migmer Dorji",
+          email: "migmer.dorji@example.com",
           emailVerified: new Date(),
           image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150",
         },
@@ -63,15 +63,15 @@ async function seedDatabase() {
     console.log(`✅ Created ${users.length} users`)
 
     // Get user IDs for bookmarks
-    const johnUser = users[0]
-    const janeUser = users[1]
-    const mikeUser = users[2]
+    const jigmeUser = users[0]
+    const jamyangUser = users[1]
+    const migmerUser = users[2]
     const sarahUser = users[3]
 
     // Create sample bookmarks
     const bookmarks = [
       {
-        userId: johnUser.id,
+        userId: jigmeUser.id,
         articleId: "1234567",
         title: "Getting Started with React Hooks",
         description:
@@ -83,7 +83,7 @@ async function seedDatabase() {
         author: "Alex Developer",
       },
       {
-        userId: johnUser.id,
+        userId: jamyangUser.id,
         articleId: "2345678",
         title: "Building REST APIs with Node.js and Express",
         description:
@@ -95,7 +95,7 @@ async function seedDatabase() {
         author: "Backend Master",
       },
       {
-        userId: janeUser.id,
+        userId: jigmeUser.id,
         articleId: "3456789",
         title: "CSS Grid vs Flexbox: When to Use Which",
         description:
@@ -107,7 +107,7 @@ async function seedDatabase() {
         author: "CSS Guru",
       },
       {
-        userId: janeUser.id,
+        userId: jigmeUser.id,
         articleId: "4567890",
         title: "Introduction to TypeScript for JavaScript Developers",
         description:
@@ -119,7 +119,7 @@ async function seedDatabase() {
         author: "Type Expert",
       },
       {
-        userId: mikeUser.id,
+        userId: migmerUser.id,
         articleId: "5678901",
         title: "Docker for Beginners: Containerizing Your Applications",
         description:
@@ -131,7 +131,7 @@ async function seedDatabase() {
         author: "DevOps Pro",
       },
       {
-        userId: mikeUser.id,
+        userId: migmerUser.id,
         articleId: "6789012",
         title: "Understanding Database Relationships and Normalization",
         description:
@@ -187,17 +187,17 @@ async function seedDatabase() {
     const sessions = [
       {
         sessionToken: "session_token_abc123",
-        userId: johnUser.id,
+        userId: jigmeUser.id,
         expires: new Date(Date.now() + 30 * 24 * 60 * 60 * 1000), // 30 days
       },
       {
         sessionToken: "session_token_def456",
-        userId: janeUser.id,
+        userId: jamyangUser.id,
         expires: new Date(Date.now() + 30 * 24 * 60 * 60 * 1000), // 30 days
       },
       {
         sessionToken: "session_token_ghi789",
-        userId: mikeUser.id,
+        userId: migmerUser.id,
         expires: new Date(Date.now() + 15 * 24 * 60 * 60 * 1000), // 15 days
       },
       {
@@ -220,7 +220,7 @@ async function seedDatabase() {
     // Create sample verification tokens
     const verificationTokens = [
       {
-        identifier: "john.doe@example.com",
+        identifier: "jigme.dorji@example.com",
         token: "verify_token_123abc",
         expires: new Date(Date.now() + 15 * 60 * 1000), // 15 minutes
       },
@@ -254,7 +254,7 @@ async function seedDatabase() {
     // Create sample accounts
     const accounts = [
       {
-        userId: johnUser.id,
+        userId: jigmeUser.id,
         type: "oauth",
         provider: "google",
         providerAccountId: "google_123456",
@@ -262,7 +262,7 @@ async function seedDatabase() {
         token_type: "Bearer",
       },
       {
-        userId: janeUser.id,
+        userId: jamyangUser.id,
         type: "oauth",
         provider: "github",
         providerAccountId: "github_789012",
@@ -270,7 +270,7 @@ async function seedDatabase() {
         token_type: "Bearer",
       },
       {
-        userId: mikeUser.id,
+        userId: migmerUser.id,
         type: "email",
         provider: "email",
         providerAccountId: "mike.johnson@example.com",
