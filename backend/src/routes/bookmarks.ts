@@ -79,7 +79,7 @@ router.post("/", async (req: AuthenticatedRequest, res) => {
 })
 
 // DELETE /api/bookmarks/:articleId - Delete a bookmark
-router.delete("/:articleId", async (req: AuthenticatedRequest, res) => {
+router.delete(":articleId", async (req: AuthenticatedRequest, res) => {
   try {
     const userId = req.user!.id
     const { articleId } = req.params
