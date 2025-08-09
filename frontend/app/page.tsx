@@ -1,4 +1,5 @@
-import { ArticleGrid } from "@/components/article-grid"
+import { ArticleGrid } from "../components/article-grid"
+
 import { Header } from "@/components/header"
 
 export default function HomePage() {

@@ -6,13 +6,13 @@
     "dev": "nodemon --exec npx ts-node src/server.ts",
     "build": "tsc",
     "start": "node dist/server.js",
-    "db:generate": "prisma generate",
-    "db:push": "prisma db push",
-    "db:migrate": "prisma migrate dev",
-    "db:studio": "prisma studio",
-    "db:seed": "npx ts-node src/scripts/seed-database.ts",
-    "db:reset": "prisma migrate reset --force",
-    "test:db": "npx ts-node src/scripts/test-connection.ts"
+    "db:generate": "dotenv -config .env.local -- prisma generate",
+    "db:push": "dotenv -config .env.local -- prisma db push",
+    "db:migrate": "dotenv -config .env.local -- prisma migrate dev",
+    "db:studio": "dotenv -config .env.local -- prisma studio",
+    "db:seed": "dotenv -config .env.local -- npx ts-node src/scripts/seed-database.ts",
+    "db:reset": "dotenv -config .env.local -- prisma migrate reset --force",
+    "test:db": "dotenv -config .env.local -- npx ts-node src/scripts/test-connection.ts"
   },
   "prisma": {
     "seed": "npx ts-node src/scripts/seed-database.ts"
@@ -27,7 +27,7 @@
     "express-session": "^1.17.3",
     "helmet": "^7.1.0",
     "jsonwebtoken": "^9.0.2",
-    "next-auth": "^4.24.11",
+    "next-auth": "^4.24.5",
     "nodemailer": "^6.9.7",
     "zod": "^3.24.1"
   },
@@ -39,6 +39,7 @@
     "@types/jsonwebtoken": "^9.0.5",
     "@types/node": "^20",
     "@types/nodemailer": "^6.4.14",
+    "dotenv-cli": "^7.4.4",
     "nodemon": "^3.0.2",
     "prisma": "^5.7.1",
     "ts-node": "^10.9.1",
